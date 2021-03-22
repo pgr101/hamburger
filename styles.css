@@ -3,12 +3,23 @@
     --menu-bar-height: 10px;
 }
 
+.container {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 70px;
+    content: none;
+    background-color: yellow;
+
+}
+
 #menu {
     background-color: #D84282;
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
 }
 
 #menu::before,
@@ -22,12 +33,35 @@
 }
 
 #menu::before {
-    left: 0;
-    top: -20px;
+    top: 20px;
+    transition:transform 1s;
+
 }
 
 #menu::after {
-    left: 0;
-    top: 20px;
+    top: -20px;
+    transition:transform 1s;
 }
+
+#menu:hover:before {
+    top: -1px;
+    transform: rotate(45deg);
+    transition: all 2s ease 0s;
+}
+
+#menu:hover:after {
+    top: 1px;
+    transform: rotate(-45deg);
+    transition: all 2s ease 0s;
+}
+
+#menu:hover {
+    background-color: transparent;
+}
+
+
+
+
+
+
 
